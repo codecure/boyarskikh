@@ -13,7 +13,7 @@ docpadConfig = {
             @getCollection("html").findAllLive({isPage:true}).on "add", (model) ->
                 model.setMetaDefaults({layout:"default"})
         posts: ->
-            @getCollection("html").findAllLive({isPost:true}).on "add", (model) ->
+            @getCollection("html").findAllLive({isPost:true}, [{date:-1}]).on "add", (model) ->
                 model.setMetaDefaults({layout:"post"})
 }
 
